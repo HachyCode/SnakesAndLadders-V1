@@ -6,10 +6,11 @@ namespace SnakesAndLadders_V1
 {
     class DisplayPath
     {
-        protected static string Star { get { return "*"; } } 
-        protected static string SpaceLine { get { return "█"; } }
-        protected static string Space { get { return " "; } }
-        protected static int vLineAmount { get { return 9; } }
+        //Variables
+        protected static string Star { get { return "*"; } }//Writes star * symbol
+        protected static string SpaceLine { get { return "█"; } }//Writes coloured box symbol
+        protected static string Space { get { return " "; } }//Creates space 
+        protected static int vLineAmount { get { return 9; } }//Specifies amount of * in vertical / small line
 
         public static void HorizontalLine(int x, int y, int amount)
         {

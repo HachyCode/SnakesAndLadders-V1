@@ -6,7 +6,7 @@ namespace SnakesAndLadders_V1
 {
     class Display : DisplayPath
     {
-        //Variables
+        //Path Variables
         private static int startHX { get { return 3; } }
         private static int startHY { get { return 1; } }
         private static int startHY2 { get { return startHY + 2; } }
@@ -56,23 +56,23 @@ namespace SnakesAndLadders_V1
 
         public static void Ladder(int lenght, int x, int y)
         {
-
+            //Will be moved to Decoration Class
         }
         public static void Snake(int lenght, int x, int y)
         {
-
+            //Will be moved to Decoration Class
         }
         public static void DiceBox(int x, int y)
         {
-
+            //Will be moved to Dice Class
         }
         public static void DiceNumbers(int x, int y)
         {
-
+            //Will be moved to Dice Class
         }
         public static void Logo(int x,int y)
         {
-
+            //Will be moved to Decoration Class
         }
     }
 }
