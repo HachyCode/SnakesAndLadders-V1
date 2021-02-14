@@ -9,7 +9,7 @@ namespace SnakesAndLadders_V1
         public void Run()
         {
             Display display = new Display();
-            display.PathDisplay();
+            display.StartDisplay();
         }
     }
 }
