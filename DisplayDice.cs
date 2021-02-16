@@ -83,5 +83,10 @@ namespace SnakesAndLadders_V1
         {
 
         }
+
+        public void ThrowDiceRequest()
+        {
+
+        }
     }
 }

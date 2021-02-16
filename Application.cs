@@ -9,7 +9,11 @@ namespace SnakesAndLadders_V1
         public void Run()
         {
             Display display = new Display();
-            display.StartDisplay();
+            //display.StartDisplay();
+
+            Game game = new Game();
+
+            Console.ReadKey(true);
         }
     }
 }
