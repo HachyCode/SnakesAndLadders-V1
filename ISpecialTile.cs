@@ -4,9 +4,9 @@ using System.Text;
 
 namespace SnakesAndLadders_V1
 {
-    interface ISpecialTile
+    interface ISpecialTile //Strategy pattern strategy, Facade pattern subsystem class
     {
-        int StandingOnTile();
-        int GoToTile();
+        int StandingOnTile(); //property for defining if some one stand on it
+        int GoToTile(); //if some one stand on the StandingOnTile then GoToTile are used to send them to it.
     }
 }

@@ -6,7 +6,7 @@ namespace SnakesAndLadders_V1
     {
         static void Main(string[] args)
         {
-            new Application().Run();
+            new Application().Run();//Instantiates Application class
 
             Console.ReadKey(true);
         }

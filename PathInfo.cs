@@ -4,16 +4,14 @@ using System.Text;
 
 namespace SnakesAndLadders_V1
 {
-    class PathInfo
+    class PathInfo //Strategy pattern context, Facade pattern subsystem class
     {
-        public static int LastTile() { return 40; }
+        public static int LastTile() { return 40; } //set the size on the path
 
-        public ISpecialTile specialTile;
+        private ISpecialTile specialTile; 
 
-        public void SpecialTile()
+        public void SpecialTile() //cheacks the turn and then if it on one of the specilatile it displaye the till type and where it got to.
         {
-            
-
             if (Player.PlayerPlace == specialTile.StandingOnTile())
             {
                 Player.PlayerJump(specialTile.GoToTile());
@@ -53,6 +51,5 @@ namespace SnakesAndLadders_V1
         {
             specialTile = st;
         }
-
     }
 }

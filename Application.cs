@@ -4,14 +4,11 @@ using System.Text;
 
 namespace SnakesAndLadders_V1
 {
-    class Application
+    class Application //Facade pattern client
     {
         public void Run()
         {
-            Display display = new Display();
-            //display.StartDisplay();
-
-            Game game = new Game();
+            Game.GetInstance(); //Singleton Pattern, Instantiates Game class
 
             Console.ReadKey(true);
         }
