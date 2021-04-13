@@ -4,7 +4,8 @@ using System.Text;
 
 namespace SnakesAndLadders_V1
 {
-    class Player //Facade pattern subsystem class
+    //Facade pattern subsystem class
+    class Player 
     {
         public static int PlayerPlace
         {
@@ -14,12 +15,14 @@ namespace SnakesAndLadders_V1
 
         private static int playerPlace;
 
-        public static void PlayerGo(int amount) //adds dice number to existing player place.
+        //adds dice number to existing player place.
+        public static void PlayerGo(int amount) 
         {
             playerPlace = playerPlace + amount;
         }
 
-        public static void PlayerJump(int amount) //sets computer place to go to tile if its ot special tile.
+        //sets computer place to go to tile if its ot special tile.
+        public static void PlayerJump(int amount) 
         {
             playerPlace = amount;
         }

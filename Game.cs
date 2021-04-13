@@ -4,52 +4,71 @@ using System.Text;
 
 namespace SnakesAndLadders_V1
 {
-    enum Turn //enumeration
+    //enumeration
+    enum Turn 
     {
         Player,
         Computer
     }
-    class Game //Facade pattern class, Strategy pattern client
+
+    //Facade pattern class, Strategy pattern client
+    class Game 
     {
-        public static Turn turn = Turn.Player; //instantiating enumeration
+        //instantiating enumeration
+        public static Turn turn = Turn.Player;
 
-        public static bool End = false; // bool verable
+        // bool verable
+        public static bool End = false;
 
-        public static PathInfo path = new PathInfo(); // Instantiating PathInfo class
+        // Instantiating PathInfo class
+        public static PathInfo path = new PathInfo();
 
-        static private Game instance = new Game(); //Singleton Pattern
+        //Singleton Pattern
+        static private Game instance = new Game();
 
-        private Game() //Singleton Pattern
+        //Singleton Pattern
+        private Game() 
         {
             do
             {
-                if (turn == Turn.Player && !End) // if its player turn
+                // if its player turn
+                if (turn == Turn.Player && !End) 
                 {
-                    Console.WriteLine("Player"); 
-                    KeyControl.Run();//Waites till user presses D key. and the runs the dice randomaiser.
+                    Console.WriteLine("Player");
+                    //Waites till user presses D key. and the runs the dice randomaiser.
+                    KeyControl.Run();
                     Console.WriteLine("d " + Dice.diceNumber);
-                    Player.PlayerGo(Dice.diceNumber);// add dinc number to player place.
+                    // add dinc number to player place.
+                    Player.PlayerGo(Dice.diceNumber);
                     Console.WriteLine("p " + Player.PlayerPlace);
-                    SpecialTileCheak();// cheaks if player is on one of the special tiles. if yes sets player place to go to tile
-                    EndCheak(); //if plaeyr is on the path 40 or more it ends the game making it player a winner.
+                    // cheaks if player is on one of the special tiles. if yes sets player place to go to tile
+                    SpecialTileCheak();
+                    //if plaeyr is on the path 40 or more it ends the game making it player a winner.
+                    EndCheak(); 
                     Console.WriteLine(" ");
                 }
 
-                if (turn == Turn.Computer && !End) //if its computer turn
+                //if its computer turn
+                if (turn == Turn.Computer && !End) 
                 {
                     Console.WriteLine("Computer");
-                    DiceThrow(); //runs the dice random number method as it dosent require any.
+                    //runs the dice random number method as it dosent require any.
+                    DiceThrow(); 
                     Console.WriteLine("d " + Dice.diceNumber);
                     Computer.ComputerGo(Dice.diceNumber);
                     Console.WriteLine("p " + Computer.ComputerPlace);
-                    SpecialTileCheak(); // cheaks if computer is on one of the special tiles. if yes sets computer place to go to tile.
-                    EndCheak(); //if computer is on the path 40 or more it ends the game making it computer a winner.
+                    // cheaks if computer is on one of the special tiles. if yes sets computer place to go to tile.
+                    SpecialTileCheak();
+                    //if computer is on the path 40 or more it ends the game making it computer a winner.
+                    EndCheak(); 
                     Console.WriteLine(" ");
                 }
-            } while (!End); // runs the algorithms while the game is not end
+            // runs the algorithms while the game is not end
+            } while (!End); 
         }
 
-        public static Game GetInstance() //Singleton Pattern
+        //Singleton Pattern
+        public static Game GetInstance() 
         {
             if(instance == null)
             {
@@ -61,11 +80,14 @@ namespace SnakesAndLadders_V1
 
         public static void DiceThrow()
         {
-            Dice.RandomNumber(); //Sets dic to rundom number
-            ChangeTurn();// runs change turn method
+            //Sets dic to rundom number
+            Dice.RandomNumber();
+            // runs change turn method
+            ChangeTurn();
         }
 
-        private static void ChangeTurn() //changies the turn to next.
+        //changies the turn to next.
+        private static void ChangeTurn() 
         {
             if(turn == Turn.Player)
             {
@@ -79,13 +101,17 @@ namespace SnakesAndLadders_V1
 
         private static void SpecialTileCheak()
         {
-            path.SetSpecialTile(new SnakesA()); //sets SetSpecialTile to run snakeA
+            //sets SetSpecialTile to run snakeA
+            path.SetSpecialTile(new SnakesA()); 
             path.SpecialTile();
-            path.SetSpecialTile(new LadderA()); //sets SetSpecialTile to runs LadderA
+
+            //sets SetSpecialTile to runs LadderA
+            path.SetSpecialTile(new LadderA()); 
             path.SpecialTile();
         }
 
-        private static void EndCheak() //cheks the place and if it 40 or bigger make game end displaying the winner.
+        //cheks the place and if it 40 or bigger make game end displaying the winner.
+        private static void EndCheak() 
         {
             if (Player.PlayerPlace >= PathInfo.LastTile())
             {

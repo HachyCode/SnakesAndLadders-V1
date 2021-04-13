@@ -4,11 +4,13 @@ using System.Text;
 
 namespace SnakesAndLadders_V1
 {
-    class KeyControl //Facade pattern subsystem class
+    //Facade pattern subsystem class
+    class KeyControl 
     {
         public static void Run()
         {
-            while (Game.turn == Turn.Player)//if it player turn runs KeyPresses method
+            //if it player turn runs KeyPresses method
+            while (Game.turn == Turn.Player)
             {
                 KeyPresses();
             }
@@ -20,14 +22,17 @@ namespace SnakesAndLadders_V1
             {
                 ConsoleKey keyPressed = Console.ReadKey(true).Key;
 
-                if (keyPressed == ConsoleKey.D) //if D key is pressed runs the diceThrow method.
+                //if D key is pressed runs the diceThrow method.
+                if (keyPressed == ConsoleKey.D) 
                 {
-                    Game.DiceThrow();//randomises the dice.s
+                    //randomises the dice.s
+                    Game.DiceThrow();
                 }
 
                 else
                 {
-                    Console.WriteLine("wronge key");//if any other key is pressed it displayes message "wronge key".
+                    //if any other key is pressed it displayes message "wronge key".
+                    Console.WriteLine("wronge key");
                 }
             }
         }
